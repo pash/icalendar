@@ -15,14 +15,16 @@ module Icalendar
     ical_property :prodid, :product_id
     ical_property :version
     ical_property :ip_method
+    ical_property :x_wr_calname
 
     def initialize()
       super("VCALENDAR")
 
       # Set some defaults
-      self.calscale = "GREGORIAN"    # Who knows, but this is the only one in the spec.
-      self.prodid = "iCalendar-Ruby" # Current product... Should be overwritten by apps that use the library
-      self.version = "2.0" # Version of the specification
+      self.calscale = "GREGORIAN"       # Who knows, but this is the only one in the spec.
+      self.prodid = "iCalendar-Ruby"    # Current product... Should be overwritten by apps that use the library
+      self.version = "2.0"              # Version of the specification
+      self.x_wr_calname = "My Calendar" # Change to your calendar name
     end
 
     def event(&block)
